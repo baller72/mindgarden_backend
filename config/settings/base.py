@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from decouple import config, Csv
+import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
@@ -72,14 +73,15 @@ ASGI_APPLICATION = 'config.asgi.application'
 
 # Database
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT', cast=int),
-    }
+    'default': dj_database_url.config(default=config('DATABASE_URL')),
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': config('DB_NAME'),
+    #     'USER': config('DB_USER'),
+    #     'PASSWORD': config('DB_PASSWORD'),
+    #     'HOST': config('DB_HOST'),
+    #     'PORT': config('DB_PORT', cast=int),
+    # }
 }
 
 # Redis / Cache
@@ -164,8 +166,9 @@ SIMPLE_JWT = {
 
 # CORS
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Flutter dev
+    "http://localhost:3000",
     "http://localhost:8000",
+    "https://mindgarden-backend-26oh.onrender.com",
 ]
 CORS_ALLOW_CREDENTIALS = True
 
