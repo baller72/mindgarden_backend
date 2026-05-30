@@ -1,0 +1,75 @@
+POST http://localhost:8000/api/auth/login/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "admin@gmail.com",
+    "password": "Buja001@"
+}
+
+###
+
+POST http://localhost:8000/api/auth/register/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "user@gmail.com",
+    "fullname": "User Test",
+    "password": "TestPassword001@"
+}
+
+###
+
+POST http://localhost:8000/api/auth/logout/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NzIzNDIxLCJpYXQiOjE3Nzk3MjE2MjEsImp0aSI6IjUxZWM3ODA1MDRjMTQwNmNiNDM0OWU0NWUzYTY0NjAyIiwidXNlcl9pZCI6IjEiLCJmdWxsbmFtZSI6IkFkbWluIFBhbmVsIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20ifQ.kQ-SNJlXHl_VjB68zYHaqeC9c1w86NPvjGERwcOJJiA
+
+{
+  "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4MDE3MjM3MCwiaWF0IjoxNzc5NTY3NTcwLCJqdGkiOiIyYzE3YmRkMjM5MjE0N2Y3ODc0Y2JhN2NkNjMwZGUyYyIsInVzZXJfaWQiOiIxIiwiZnVsbG5hbWUiOiJBZG1pbiBQYW5lbCIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIn0.YLwia-l9COVjhKm24NajbX242oXpYxl5K2NkFkhpfSA"
+}
+
+###
+
+GET http://localhost:8000/api/users/me/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NzIzNDIxLCJpYXQiOjE3Nzk3MjE2MjEsImp0aSI6IjUxZWM3ODA1MDRjMTQwNmNiNDM0OWU0NWUzYTY0NjAyIiwidXNlcl9pZCI6IjEiLCJmdWxsbmFtZSI6IkFkbWluIFBhbmVsIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20ifQ.kQ-SNJlXHl_VjB68zYHaqeC9c1w86NPvjGERwcOJJiA
+
+###
+
+GET http://localhost:8000/api/journals/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NzIzNDIxLCJpYXQiOjE3Nzk3MjE2MjEsImp0aSI6IjUxZWM3ODA1MDRjMTQwNmNiNDM0OWU0NWUzYTY0NjAyIiwidXNlcl9pZCI6IjEiLCJmdWxsbmFtZSI6IkFkbWluIFBhbmVsIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20ifQ.kQ-SNJlXHl_VjB68zYHaqeC9c1w86NPvjGERwcOJJiA
+
+###
+
+POST http://localhost:8000/api/journals/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NzIzNDIxLCJpYXQiOjE3Nzk3MjE2MjEsImp0aSI6IjUxZWM3ODA1MDRjMTQwNmNiNDM0OWU0NWUzYTY0NjAyIiwidXNlcl9pZCI6IjEiLCJmdWxsbmFtZSI6IkFkbWluIFBhbmVsIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20ifQ.kQ-SNJlXHl_VjB68zYHaqeC9c1w86NPvjGERwcOJJiA
+
+{
+  "text": "Today I felt calm after walking in the park.",
+  "audio_file": null
+}
+
+###
+
+GET http://localhost:8000/api/emotions/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NzIzNDIxLCJpYXQiOjE3Nzk3MjE2MjEsImp0aSI6IjUxZWM3ODA1MDRjMTQwNmNiNDM0OWU0NWUzYTY0NjAyIiwidXNlcl9pZCI6IjEiLCJmdWxsbmFtZSI6IkFkbWluIFBhbmVsIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20ifQ.kQ-SNJlXHl_VjB68zYHaqeC9c1w86NPvjGERwcOJJiA
+
+###
+
+GET http://localhost:8000/api/breathing/exercises/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NzIzNDIxLCJpYXQiOjE3Nzk3MjE2MjEsImp0aSI6IjUxZWM3ODA1MDRjMTQwNmNiNDM0OWU0NWUzYTY0NjAyIiwidXNlcl9pZCI6IjEiLCJmdWxsbmFtZSI6IkFkbWluIFBhbmVsIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20ifQ.kQ-SNJlXHl_VjB68zYHaqeC9c1w86NPvjGERwcOJJiA
+
+###
+
+GET http://localhost:8000/api/notifications/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NzIzNDIxLCJpYXQiOjE3Nzk3MjE2MjEsImp0aSI6IjUxZWM3ODA1MDRjMTQwNmNiNDM0OWU0NWUzYTY0NjAyIiwidXNlcl9pZCI6IjEiLCJmdWxsbmFtZSI6IkFkbWluIFBhbmVsIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20ifQ.kQ-SNJlXHl_VjB68zYHaqeC9c1w86NPvjGERwcOJJiA
+
+###
+
+GET http://localhost:8000/api/insights/weekly/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NzIzNDIxLCJpYXQiOjE3Nzk3MjE2MjEsImp0aSI6IjUxZWM3ODA1MDRjMTQwNmNiNDM0OWU0NWUzYTY0NjAyIiwidXNlcl9pZCI6IjEiLCJmdWxsbmFtZSI6IkFkbWluIFBhbmVsIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20ifQ.kQ-SNJlXHl_VjB68zYHaqeC9c1w86NPvjGERwcOJJiA
+
+###
+
+GET http://localhost:8000/api/insights/monthly/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NzIzNDIxLCJpYXQiOjE3Nzk3MjE2MjEsImp0aSI6IjUxZWM3ODA1MDRjMTQwNmNiNDM0OWU0NWUzYTY0NjAyIiwidXNlcl9pZCI6IjEiLCJmdWxsbmFtZSI6IkFkbWluIFBhbmVsIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20ifQ.kQ-SNJlXHl_VjB68zYHaqeC9c1w86NPvjGERwcOJJiA
+
